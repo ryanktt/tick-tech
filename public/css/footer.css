@@ -1,0 +1,46 @@
+footer{
+    height: 220px;
+    background-color: rgb(14, 17, 26);
+    padding: 30px 0;
+}
+
+
+
+footer h2 {
+    margin: 0px;
+    padding-bottom: 15px;    
+}
+.footer-wrapper {
+    margin: 0 auto;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+
+.copyright-wrapper {
+    background-color: rgb(16, 27, 41);
+}
+
+.copyright {
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.contact-icons{
+    width: 100%;
+    padding-right: 10px;
+    
+    font-size: 20px;
+}
+.contact-icons:hover{
+    cursor: pointer;
+    color: rgb(0, 153, 255);
+}
+
+.logo {
+    width: 170px;
+}
