@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(21, 60, 104);
+}
+
+main {
+    width: 1000px;
+    margin: 0 auto;
+    
+}
+
+.form {
+    margin: 15px 0 5px 0;
+}
+main form {
+    margin: 50px 5px;
+
+}
+
+label {
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: 25px;
+    margin-bottom: 5px;
+
+}
+main textarea, main input {
+    padding: 20px;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.973);
+    
+}
+
+.subtitle textarea {
+    height: 150px;
+}
+main input {
+    font-size: 20px;
+    width: 600px;
+    height: 25px;
+}
+textarea {
+    font-size: 20px;
+    height: 300px;
+
+}
+
+main button {
+    margin-top:  20px;
+}

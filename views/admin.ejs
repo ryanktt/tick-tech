@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public\css\form.css">
-    <title>Postagem</title>
+<%- include('./templates/head.ejs') %>
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/admin-post.css">
+<link rel="stylesheet" href="/css/footer.css">
 </head>
+
 <body>
+<%- include('./templates/nav-bar.ejs') %>
 
     <main>
         <form autocomplete="off" action="">
@@ -26,9 +25,10 @@
                 <label for="post">Postagem</label>
                 <textarea name="post" id="post" cols="60" rows="10"></textarea>
             </div>
+            <button type="submit">Postar</button>
         </form>
 
     </main>
-    
+    <%- include('./templates/footer.ejs') %>
 </body>
 </html>

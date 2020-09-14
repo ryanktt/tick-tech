@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,700&display=swap');
+
 * {
     
     box-sizing: border-box;
@@ -13,13 +12,15 @@ body{
 }
 
 li, a, button {
-    font-family: 'Rubik', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: white;
     text-decoration: none;
 }
- 
+
+
+
+
 header {
     
     display: flex; 
@@ -32,7 +33,7 @@ header {
 }
 
 .header-wrapper {
-    width: 1000px;
+    width: 1050px;
     margin: 0 auto;
     display: inline-flex;
     justify-content: space-between;
@@ -96,9 +97,11 @@ button:hover {
 }
 .nav__searchbox input {
     height: 30px;
+    width: 150px;
     padding-left: 15px;
     border-style: none;
     border-radius: 20px;
+    background-color: white;
     
 }
 .nav__searchbox button {
@@ -106,23 +109,5 @@ button:hover {
 }
 
 
-
-
-h2 {
-    font-size: 25px;
-    font-weight: 700;
-    color: rgb(255, 255, 255);
-    
-}
-h2:hover{
-    color: rgb(0, 153, 255);
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-p{
-    font-weight: 400;
-    color: rgb(202, 202, 202);
-}
 
 

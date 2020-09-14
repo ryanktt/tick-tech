@@ -2,20 +2,28 @@ footer{
     height: 220px;
     background-color: rgb(14, 17, 26);
     padding: 30px 0;
+    color: rgba(255, 255, 255, 0.603);
 }
 
-
-
 footer h2 {
+    color: white;
     margin: 0px;
     padding-bottom: 15px;    
 }
+footer p {
+    font-weight: 300;
+}
+
+footer p, .copyright p {
+    color: rgba(255, 255, 255, 0.712);
+}
+
 .footer-wrapper {
     margin: 0 auto;
-    width: 1000px;
+    width: 1050px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    gap: 50px;
 }
 
 
@@ -24,7 +32,8 @@ footer h2 {
 }
 
 .copyright {
-    width: 1000px;
+    text-align: center;
+    width: 1050px;
     margin: 0 auto;
     font-size: 14px;
     padding: 10px 0;
@@ -36,6 +45,7 @@ footer h2 {
     
     font-size: 20px;
 }
+
 .contact-icons:hover{
     cursor: pointer;
     color: rgb(0, 153, 255);
