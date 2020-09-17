@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    width: 1000px;
+    width: 1050px;
     margin: 0 auto;
     
 }
@@ -11,6 +11,7 @@ main {
 .form {
     margin: 15px 0 5px 0;
 }
+
 main form {
     margin: 50px 5px;
 
