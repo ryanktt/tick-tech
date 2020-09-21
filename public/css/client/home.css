@@ -7,7 +7,7 @@ body {
 }
 
 main {
-    width: 1050px;
+   
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -75,7 +75,7 @@ img:hover{
 @media screen and (max-width: 1070px) {
     main {
         grid-template-columns: 1fr 1fr;
-        width: 830px;
+
     }
     .top-posts-box {
         position: absolute;

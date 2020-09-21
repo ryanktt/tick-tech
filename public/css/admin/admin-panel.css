@@ -1,0 +1,38 @@
+.box {
+    align-items: center;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 3px;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.432);
+}
+.box img {
+    height: 100px;
+}
+
+.box div {
+    align-items: center;
+    display: flex;
+}
+
+.post-img {
+    font-size: 0;
+    margin-right: 20px;
+}
+.options {
+    margin-right: 25px;
+}
+
+.delete-btn {
+    color: rgb(138, 0, 0);
+    background-color: transparent;
+    margin-right: 25px;
+}
+.delete-btn:hover {
+    background-color: transparent;
+}
+
+.edit-btn {
+    color: green;
+}
