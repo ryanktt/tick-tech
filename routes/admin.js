@@ -7,12 +7,12 @@ const router = express.Router();
 const app = express();
 
 
-router.get('/admin', adminController.getAdminAddPost);
+router.get('/add-post/:id', adminController.getAdminAddPost);
 
-router.post('/admin', adminController.postAdminAddPost);
+router.post('/add-post', adminController.postAdminAddPost);
 
-router.get('/admin-panel', (req, res, next) => {
-    res.render('admin-panel')
-})
+router.get('/panel', adminController.getAdminPanel);
+
+router.post('/panel', adminController.postDeletePost);
 
 module.exports = router;

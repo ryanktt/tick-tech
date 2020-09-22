@@ -1,0 +1,72 @@
+<%- include('./templates/head.ejs') %>
+<link rel="stylesheet" href="/css/admin/admin-post.css">
+
+</head>
+
+<body>
+<%- include('./templates/nav-bar.ejs') %>
+
+    <main>
+        <% if (edit) { %>
+            <form autocomplete="off" action="/admin/add-post/?edit=true" method="POST">
+                <div class="form">
+                    <label for="title">Título</label>
+                    <input name="title" type="text" id="title" value="<%= post.title %>">
+                </div>
+                <div class="form subtitle">
+                    <label for="subtitle">Subtítulo</label>
+                    <textarea name="subtitle" id="subtitle" cols="60" rows="10" ><%= post.subtitle %></textarea>
+                </div>
+                <div class="form">
+                    <label for="first-paragraph">Primeiro Parágrafo</label>
+                    <textarea name="firstParagraph" id="first-paragraph" cols="60" rows="10"><%= post.firstParagraph %></textarea>
+                </div>
+                <div class="form">
+                    <label for="imageUrl">URL da Imagem</label>
+                    <input name="imageUrl" type="text" id="imageUrl" value="<%= post.imageUrl %>">
+                </div>
+                <div class="form">
+                    <label for="post">Postagem <span>(usar html*)</span></label>
+                    <textarea name="post" id="post" cols="60" rows="10"><%= post.post %></textarea>
+                </div>
+                <div class="form">
+                    <label for="post">tags <span>(separar com vírgulas e sem espaços após vírgulas*)</span></label>
+                    <input name="tags" type="text" id="tags" value="<%= post.tags %>">
+                </div>
+                <input type="hidden" name="id" value="<%= post.id %> ">
+                <button class="form" type="submit">Postar</button>
+            </form> 
+        <% } else { %>
+
+            <form autocomplete="off" action="/admin/add-post" method="POST">
+                <div class="form">
+                    <label for="title">Título</label>
+                    <input name="title" type="text" id="title">
+                </div>
+                <div class="form subtitle">
+                    <label for="subtitle">Subtítulo</label>
+                    <textarea name="subtitle" id="subtitle" cols="60" rows="10"></textarea>
+                </div>
+                <div class="form">
+                    <label for="first-paragraph">Primeiro Parágrafo</label>
+                    <textarea name="firstParagraph" id="first-paragraph" cols="60" rows="10"></textarea>
+                </div>
+                <div class="form">
+                    <label for="imageUrl">URL da Imagem</label>
+                    <input name="imageUrl" type="text" id="imageUrl">
+                </div>
+                <div class="form">
+                    <label for="post">Postagem <span>(usar html*)</span></label>
+                    <textarea name="post" id="post" cols="60" rows="10"></textarea>
+                </div>
+                <div class="form">
+                    <label for="post">tags <span>(separar com vírgulas e sem espaços após vírgulas*)</span></label>
+                    <input name="tags" type="text" id="tags">
+                </div>
+                <button class="form" type="submit">Postar</button>
+            </form>
+        <% } %> 
+    </main>
+    <%- include('./templates/footer.ejs') %>
+</body>
+</html>

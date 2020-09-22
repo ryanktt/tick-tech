@@ -7,48 +7,26 @@
     <%- include('./templates/nav-bar.ejs') %>
     <main>
         <div class="title">
-            <h1>Facebook Infinite Office Shows Your Workspace in Virtual Reality with Oculus Quest</h1>
-            <p class="subtitle">Oculus Quest 2 will be released in just a few short weeks, and to show the possibilities of the virtual reality headset</p>
+            <h1><%= post.title %></h1>
+            <p class="subtitle"><%= post.subtitle %></p>
             <hr>
         </div>
         <div class="post">
-            <p>Oculus Quest 2 will be released in just a few short weeks, and to show the possibilities of the virtual reality headset, Facebook created an “Infinite Office” video. Put simply, they want to show that productivity can exist in both the virtual and real worlds, especially with many people working from home until 2021. Some may not have a large workspace for a multi monitors setup, but by placing them virtually, space does not become an issue. Read more for a video and additional information.</p>
+            <p><%= post.firstParagraph %></p>
 
-            <img src="https://media.techeblog.com/images/facebook-infinite-office-virtual-reality-oculus-vr.jpg" alt="">
-            <p>Oculus Quest 2 will be released in just a few short weeks, and to show the possibilities of the virtual reality headset, Facebook created an “Infinite Office” video. Put simply, they want to show that productivity can exist in both the virtual and real worlds, especially with many people working from home until 2021. Some may not have a large workspace for a multi monitors setup, but by placing them virtually, space does not become an issue. Read more for a video and additional information.
-            </p>
-            <p>Oculus Quest 2 will be released in just a few short weeks, and to show the possibilities of the virtual reality headset, Facebook created an “Infinite Office” video. Put simply, they want to show that productivity can exist in both the virtual and real worlds, especially with many people working from home until 2021. Some may not have a large workspace for a multi monitors setup, but by placing them virtually, space does not become an issue. Read more for a video and additional information.
-            </p>
+            <img src="<%= post.imageUrl %>" alt="">
+            <p><%= post.post %> </p>
             
     
             <div class="tags-container">
                 <hr>
                 <h2>Tags</h2>
                 <div class="tags">
+                <% tagArr.forEach((cur, i) => { %> 
                     <div>
-                        <p>Gaming</p>
+                        <p><%= cur %></p>
                     </div>
-                    <div>
-                        <p>Óculos</p>
-                    </div>
-                    <div>
-                        <p>Realidade Virtual</p>
-                    </div>
-                    <div>
-                        <p>Futurismo</p>
-                    </div>
-                    <div>
-                        <p>Gaming</p>
-                    </div>
-                    <div>
-                        <p>Óculos</p>
-                    </div>
-                    <div>
-                        <p>VR</p>
-                    </div>
-                    <div>
-                        <p>Futurismo</p>
-                    </div>
+                <% }) %> 
                 </div>
             </div>
         </div>

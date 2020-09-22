@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
-app.use(adminRouter);
+app.use('/admin', adminRouter);
 app.use(clientRouter);
 
 app.listen(3000,() => {

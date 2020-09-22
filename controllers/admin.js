@@ -1,10 +1,27 @@
-const Post = require('../models/admin.js');
+const Post = require('../models/post.js');
+
 
 exports.getAdminAddPost = (req, res, next) => {
-    res.render('../views/admin.ejs');
+    let edit = req.query.edit;
+    edit === 'false' ? edit = false : edit = true;
+    let id = req.params.id;
+
+    Post.findById(id)
+    .then(post => {
+        post = post[0][0];
+        res.render('../views/add-post.ejs', {edit: edit, post: post});
+    })
+    .catch(err => {
+
+    });
 }
 
+
+
+
 exports.postAdminAddPost = (req, res, next) => {
+    const id = req.body.id;
+
     const title = req.body.title;
     const subtitle = req.body.subtitle;
     const firstParagraph = req.body.firstParagraph;
@@ -12,7 +29,51 @@ exports.postAdminAddPost = (req, res, next) => {
     const post = req.body.post;
     const tags = req.body.tags;
 
+    const edit = req.query.edit;
+
     const newPost = new Post(title, subtitle, firstParagraph, imageUrl, post, tags);
-    newPost.save();
+    //NEW POST
+    if (edit !== 'true') {
+        newPost.save();
+    } else {
+    //EDIT POST
+        newPost.editById(id);
+    }
     
+
+    
+    
+    
+
+
+    res.redirect('/admin/panel');
+}
+
+exports.getAdminPanel = (req, res, next) => {
+    
+    Post.fetch()
+    .then(posts => {
+        return posts;
+        
+    })
+    .then(posts => {
+        res.render('admin-panel', {posts: posts});
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+   
+}
+
+exports.postDeletePost = (req, res, next) => {
+    const postId = Number(req.body.id);
+    Post.deleteById(postId)
+    .then(log => {
+        res.redirect('/admin/panel');
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
 }
