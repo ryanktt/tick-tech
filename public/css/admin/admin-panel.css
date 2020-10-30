@@ -36,3 +36,8 @@
 .edit-btn {
     color: green;
 }
+
+.load-more {
+     width: max-content;
+     margin: 40px 0;
+}

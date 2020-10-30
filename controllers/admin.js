@@ -9,7 +9,11 @@ exports.getAdminAddPost = (req, res, next) => {
     Post.findById(id)
     .then(post => {
         post = post[0][0];
-        res.render('../views/add-post.ejs', {edit: edit, post: post});
+        res.render('../views/add-post.ejs', {
+            edit: edit, 
+            post: post,
+            pageTitle: 'Criar Postagem'
+        });
     })
     .catch(err => {
 
@@ -51,13 +55,15 @@ exports.postAdminAddPost = (req, res, next) => {
 
 exports.getAdminPanel = (req, res, next) => {
     
-    Post.fetch()
+    Post.fetch(0, 12)
     .then(posts => {
         return posts;
         
     })
     .then(posts => {
-        res.render('admin-panel', {posts: posts});
+        res.render('admin-panel', {
+            posts: posts, 
+            pageTitle: 'Painel de Admin'});
     })
     .catch(err => {
         console.log(err)

@@ -23,8 +23,9 @@ header {
 
 main {
     width: 1050px;
+    min-height: 1000px;
     margin: 60px auto;
-    min-height: 1300px;
+    
     
 }
 
@@ -57,4 +58,9 @@ footer{
     footer {
         width: 80vw;
     }
+}
+
+
+.invisible, .disapear {
+    display: none;
 }

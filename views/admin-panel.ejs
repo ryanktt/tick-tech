@@ -21,17 +21,26 @@
                     <input type="hidden" name="id" value="<%= posts[i].id %>">
                     <button type="submit" class="delete-btn"><i class="far fa-trash-alt fa-2x"></i></button>
                 </form>
-                
+       
             </div>
+            
         </div>
 
     <% } %> 
+        <div class="invisible"></div>
+        
+        <% if (posts.length >= 12) { %> 
+
+            <div class="load-more btn">
+                <button type="button">Carregar Mais</button>
+            </div>
+            
+            <% } %> 
 
     </main>
+    
 
-
-
-        
+        <script src="\js\panel.js"></script>
 <%- include('./templates/footer.ejs') %>
 
 </body>

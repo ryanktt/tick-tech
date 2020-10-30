@@ -7,25 +7,25 @@
 
             
            
-                <main>
+                <main class="home-posts">
                     <% if (posts.length > 0) { %> 
-                    <div class="latest-post box">
-                        <a href="/post/<%= posts[0].id %>"><img src="<%= posts[0].img %>" alt="image"></a>
-                        <a href="/post/<%= posts[0].id %>"><h2><%= posts[0].title %></h2></a>
-                        <p><%= posts[0].firstParagraph %> </p>
-                        
-                    </div>
-
-                    <% for(let i = 1; i < posts.length; i++) { %>
-                        <div class="box">
-                            <a href="/post/<%= posts[i].id %>"><img src="<%= posts[i].img %>" alt="image"></a>
-                            <a href="/post/<%= posts[i].id %>"><h2><%= posts[i].title %></h2></a>
-                            <p><%= posts[i].firstParagraph %> </p>
+                        <div class="latest-post box">
+                            <a href="/post/<%= posts[0].id %>"><img src="<%= posts[0].img %>" alt="image"></a>
+                            <a href="/post/<%= posts[0].id %>"><h2><%= posts[0].title %></h2></a>
+                            <p><%= posts[0].firstParagraph %> </p>
                             
                         </div>
 
-                    <% } %>
-                    
+                        <% for(let i = 1; i < posts.length; i++) { %>
+                            <div class="box">
+                                <a href="/post/<%= posts[i].id %>"><img src="<%= posts[i].img %>" alt="image"></a>
+                                <a href="/post/<%= posts[i].id %>"><h2><%= posts[i].title %></h2></a>
+                                <p><%= posts[i].firstParagraph %> </p>
+                                
+                            </div>
+                            
+                        <% } %>
+                        <div class="invisible"></div>
                     <% } else { %>   
                         <h2>SUA BUSCA NÃO ENCONTROU NENHUMA POSTAGEM.</h2>
                     <% } %> 
@@ -34,19 +34,18 @@
                         <img src="https://adstudio.cloud/images/advetisments/multiple-slides/y-n_saas_online_platform_600x500.png" alt="ad">
                         
                     </div>  
-                    
-              
-                    
-                    
-                    
+                    <% if (posts.length >= 12) { %> 
+
+                        <div class="load-more btn">
+                            <button type="button">Carregar Mais</button>
+                        </div>
+                        
+                        <% } %> 
                 </main>
- 
+                
 
-            
-       
-       
+       <script src="\js\home.js"></script>
 <%- include('./templates/footer.ejs') %>
-
     </body>
 
     

@@ -13,6 +13,6 @@ router.post('/home-search', clientController.getShowPostsSearch)
 
 router.get('/post/:id', clientController.getShowPost);
 
-
+router.get('/data', clientController.getDataLoad); 
 
 module.exports = router;

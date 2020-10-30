@@ -19,8 +19,12 @@
                     </form>   
                 </div>
                 <li><a href="/home">Publicações</a></li>
-                <li><a href="#">Comunidade</a></li>
-                <li><a href="/admin/add-post/new?edit=false">Sobre</a></li>
+                <% if (isAuthenticated) { %> 
+                    <li><a href="/admin/add-post/new?edit=false" >Criar Post</a></li>
+                    <li><a href="/admin/panel" >Painel</a></li>
+                <% } else { %> 
+                    <li><a href="#">Sobre</a></li>
+                <% } %> 
             </ul>    
             
         </div>

@@ -1,4 +1,3 @@
-const { search } = require('../models/post.js');
 const Post = require('../models/post.js');
 
 exports.getShowPost = (req, res, next) => {
@@ -6,33 +5,44 @@ exports.getShowPost = (req, res, next) => {
     Post.findById(postId)
     .then(post => {
         return post = post[0][0];
-         
+        
     })
     .then(post => {
         const tagArr = post.tags.split(',');
-        res.render('../views/post.ejs', {post: post, tagArr: tagArr});
+        
+        return res.render('../views/post.ejs', {
+            post: post, 
+            tagArr: tagArr,
+            pageTitle: post.title
+        });
     })
     .catch(err => {
-        
+      next();
     })
+    
 
     
-}
+} 
 
 exports.getShowPosts = (req, res, next) => {
-    Post.fetch()
+    Post.fetch(0, 12)
     .then(posts => {
-    res.render('../views/index.ejs', {posts: posts})
+        
+        res.render('../views/index.ejs', {
+            posts: posts,
+            pageTitle: 'TickTeck'
+        })
+    })
+    .catch(err => {
+        console.log(err);
     })
     
 }
 
 exports.getShowPostsSearch = (req, res, next)=> {
     const subject = req.body.subject;
-    console.log(subject)
     Post.search(subject)
     .then(posts => {
-        console.log(posts)
         res.render('../views/index.ejs', {posts: posts});
     })
     .catch(err => {
@@ -40,4 +50,15 @@ exports.getShowPostsSearch = (req, res, next)=> {
     })
 }
 
-
+exports.getDataLoad = (req, res, next) => {
+    res.contentType('text/html')
+    
+    const loadCount = req.query.loadCount;
+     
+    Post.fetch(loadCount, 12)
+    .then(posts => {
+        console.log(posts)
+        res.send(posts)      
+        
+    })
+}

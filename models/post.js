@@ -28,15 +28,15 @@ class Post{
         })
     }
 
-    static fetch() {
-        return db.execute('SELECT * FROM posts')
+    static fetch(start, amount) {
+        return db.execute('SELECT * FROM posts ORDER BY id DESC LIMIT ?,?', [start, amount])
         .then(posts => {
-            posts = posts[0].reverse();
+            posts = posts[0]
             return posts;
         })
 
     }
-
+ 
     static deleteById(id) {
         return db.execute('DELETE FROM posts WHERE id = ?', [id]);
     }
