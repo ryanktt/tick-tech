@@ -20,8 +20,13 @@ li, a, button {
     box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.2);
-    
 }
+
+
+
+
+
+
 
 .nav__items img, .nav__items  {
     align-items: center;
@@ -98,7 +103,10 @@ button:hover {
 .nav__searchbox input {
     outline-style: none;
     height: 30px;
+    width: 150px;
     display: inline-block;
+    
+    
     padding-left: 15px;
     border-style: none;
     border-radius: 20px;
@@ -180,11 +188,12 @@ button:hover {
         overflow: hidden;
         transform: translateX(100%);
         display: none;
+        border-bottom-left-radius: 5px;
         
-        width: 100vw;
-        padding: 0 25px;
+        width: 70vw;
+        padding: 0 20px;
         position: absolute;
-        height: fit-content;
+        height: 400px;
         right: 0px;
         top: 60px;
         background-color: rgb(26, 33, 37);
@@ -211,7 +220,6 @@ button:hover {
     .nav__searchbox input {
         position: relative;
         top: 5px;
-        width: 80%;
     }
     button {
         float: right;

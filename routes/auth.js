@@ -1,8 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const authController = require('../controllers/auth.js');
 
 const router = express.Router();
+const app = express(); 
 
 router.get('/sign-up', authController.getSignUp);
 

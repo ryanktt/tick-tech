@@ -1,6 +1,4 @@
 const Post = require('../models/post.js');
-const User = require('../models/user.js');
-const moment = require('moment')
 
 exports.getShowPost = (req, res, next) => {
     const postId = req.params.id;
@@ -11,20 +9,12 @@ exports.getShowPost = (req, res, next) => {
     })
     .then(post => {
         const tagArr = post.tags.split(',');
-        let date = new Date(post.createdAt);
-        let createdAt = moment(date).format('l');
         
-        User.findById(post.user_id)
-        .then(user => {
-            user = user[0][0];
-            return res.render('../views/post.ejs', {
-                post: post, 
-                tagArr: tagArr,
-                pageTitle: post.title,
-                user: user,
-                createdAt: createdAt
-            });
-        })
+        return res.render('../views/post.ejs', {
+            post: post, 
+            tagArr: tagArr,
+            pageTitle: post.title
+        });
     })
     .catch(err => {
       next();
@@ -35,21 +25,12 @@ exports.getShowPost = (req, res, next) => {
 } 
 
 exports.getShowPosts = (req, res, next) => {
-    function truncateString(str, num) {
-        if (num > str.length){
-          return str;
-        } else{
-          str = str.substring(0,num);
-          return str+"...";
-        }
-      
-      }
     Post.fetch(0, 12)
     .then(posts => {
+        
         res.render('../views/index.ejs', {
             posts: posts,
-            pageTitle: 'TickTeck',
-            truncateString: truncateString
+            pageTitle: 'TickTeck'
         })
     })
     .catch(err => {
@@ -59,23 +40,10 @@ exports.getShowPosts = (req, res, next) => {
 }
 
 exports.getShowPostsSearch = (req, res, next)=> {
-    function truncateString(str, num) {
-        if (num > str.length){
-          return str;
-        } else{
-          str = str.substring(0,num);
-          return str+"...";
-        }
-      
-      }
     const subject = req.body.subject;
     Post.search(subject)
     .then(posts => {
-        res.render('../views/index.ejs', {
-            posts: posts, 
-            pageTitle: 'Search: ' + subject + '',
-            truncateString: truncateString
-        });
+        res.render('../views/index.ejs', {posts: posts});
     })
     .catch(err => {
         console.log(err);
@@ -89,7 +57,7 @@ exports.getDataLoad = (req, res, next) => {
      
     Post.fetch(loadCount, 12)
     .then(posts => {
-        
+        console.log(posts)
         res.send(posts)      
         
     })

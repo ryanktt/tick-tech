@@ -7,9 +7,9 @@ const router = express.Router();
 const app = express();
 
 
-router.get('/', clientController.getShowPosts);
+router.get('/home', clientController.getShowPosts);
 
-router.post('/search', clientController.getShowPostsSearch)
+router.post('/home-search', clientController.getShowPostsSearch)
 
 router.get('/post/:id', clientController.getShowPost);
 

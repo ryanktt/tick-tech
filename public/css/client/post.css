@@ -28,29 +28,6 @@ h1 {
     color: rgba(0, 0, 0, 0.623);
 }
 
-.post-user {
-    display: flex;
-}
-
-.post-user img {
-    height: 35px;
-    width: 35px;
-    object-fit: cover;
-    margin-right: 10px;
-    border-radius: 100px;
-}
-
-.post-user .post-user__name {
-    font-size: 14px;
-    color: rgb(121, 121, 121);
-    margin-bottom: 5px;
-}
-
-.post-user .post-user__date {
-    font-size: 12px;
-    color: rgb(141, 141, 141);
-}
-
 .post {
    grid-column: 1/2;
 }
@@ -93,7 +70,7 @@ hr {
 }
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 850px) {
     .post {
         grid-column: 1/3;
     }

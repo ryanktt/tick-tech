@@ -2,33 +2,35 @@
 
 <div class="header-wrapper">
     <header>
-        <a href="/" class="mobile-logo" ><img src="https://i.imgur.com/iHSvX7K.png" alt="logo"></a>
+        <img src="https://i.imgur.com/iHSvX7K.png" class="mobile-logo " alt="logo">
         <div class="nav__items">
             <div class="desktop-logo-box">
-                <a href="/"><img src="https://i.imgur.com/iHSvX7K.png"  class="desktop-logo" alt="logo"></a>
+                <img src="https://i.imgur.com/iHSvX7K.png"  class="desktop-logo" alt="logo">
             </div>
             
             
             <ul class="nav__links">
                 <div class="nav__searchbox nav__searchbox-mobile"> 
-                    <form autocomplete="off" action="/search" method="GET">
+                    <form autocomplete="off" action="/home-search" method="GET">
                         <input type="text" placeholder="O que você busca?">
                         <button type="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>   
                 </div>
+                <li><a href="/home">Publicações</a></li>
                 <% if (isAuthenticated) { %> 
-                    <li><a href="/admin/add-post/new?edit=false" >Postar</a></li>
+                    <li><a href="/admin/add-post/new?edit=false" >Criar Post</a></li>
                     <li><a href="/admin/panel" >Painel</a></li>
-                <% }  %> 
-         
+                <% } else { %> 
+                    <li><a href="#">Sobre</a></li>
+                <% } %> 
             </ul>    
             
         </div>
 
             <div class="nav__searchbox"> 
-                    <form autocomplete="off" action="/search" method="POST">
+                    <form autocomplete="off" action="/home-search" method="POST">
                         <input type="text" name="subject" placeholder="O que você busca?">
                         <button type="submit">
                             <i class="fas fa-search"></i>
