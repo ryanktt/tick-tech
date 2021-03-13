@@ -9,6 +9,13 @@
         <div class="title">
             <h1><%= post.title %></h1>
             <p class="subtitle"><%= post.subtitle %></p>
+            <div class='post-user'>
+                <img src="<%= user.photoUrl %>">
+                <div>
+                    <p class="post-user__name"><%= user.name %></p>
+                    <p class="post-user__date"><%= createdAt %></p>
+                </div>
+            </div>
             <hr>
         </div>
         <div class="post">
