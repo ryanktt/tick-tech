@@ -25,12 +25,21 @@ exports.getShowPost = (req, res, next) => {
 } 
 
 exports.getShowPosts = (req, res, next) => {
+    function truncateString(str, num) {
+        if (num > str.length){
+          return str;
+        } else{
+          str = str.substring(0,num);
+          return str+"...";
+        }
+      
+      }
     Post.fetch(0, 12)
     .then(posts => {
-        
         res.render('../views/index.ejs', {
             posts: posts,
-            pageTitle: 'TickTeck'
+            pageTitle: 'TickTeck',
+            truncateString: truncateString
         })
     })
     .catch(err => {
@@ -43,7 +52,10 @@ exports.getShowPostsSearch = (req, res, next)=> {
     const subject = req.body.subject;
     Post.search(subject)
     .then(posts => {
-        res.render('../views/index.ejs', {posts: posts});
+        res.render('../views/index.ejs', {
+            posts: posts, 
+            pageTitle: 'Search: ' + subject + ''
+        });
     })
     .catch(err => {
         console.log(err);
@@ -57,7 +69,7 @@ exports.getDataLoad = (req, res, next) => {
      
     Post.fetch(loadCount, 12)
     .then(posts => {
-        console.log(posts)
+        
         res.send(posts)      
         
     })

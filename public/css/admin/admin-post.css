@@ -17,7 +17,7 @@ main form {
 label {
     color: rgb(255, 255, 255);
     display: block;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 5px;
 
 }
@@ -25,7 +25,7 @@ main textarea, main input {
     width: 100%;
     padding: 20px;
     border-style: none;
-    background-color: rgba(255, 255, 255, 0.973);
+    background-color: rgba(241, 241, 241, 0.973);
     
 }
 

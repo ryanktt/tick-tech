@@ -18,7 +18,6 @@ exports.postLogin = (req, res, next) => {
     return User.findByEmail(email)
     .then(user => {
         user = user[0][0];
-        console.log(user)
         if (!user) {
             req.flash('errorMessage', 'Email ou senha inválidos.');
             return res.redirect('/auth/login');
@@ -36,7 +35,7 @@ exports.postLogin = (req, res, next) => {
                 }
                  return req.session.save(err => { 
                     console.log(err);
-                    res.redirect('/home')
+                    res.redirect('/')
                 })
 
             }
@@ -78,7 +77,6 @@ exports.postSignup = (req, res, next) => {
 
             } 
         }*/
-        console.log(user)
         if(user.length > 0 ) {
             req.flash('errorMessage', 'Seu email já foi cadastrado.');
             return res.redirect('/auth/sign-up');

@@ -1,8 +1,8 @@
-const tracer = require( 'trace-unhandled/register' );
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
-const db = require('./util/database');
+
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
 const flash = require('connect-flash'); 
@@ -29,7 +29,7 @@ app.use(session({
     key: process.env.SESSION_KEY,
     secret: process.env.SESSION_SECRET,
     saveUninitialized: false,
-    cookie: {maxAge: 60000},
+    cookie: {maxAge: 30 * 1000 * 60 * 60 * 24},
     resave: false,
     store: sessionStore
     
@@ -53,6 +53,7 @@ app.use(clientRouter);
 app.use('/auth', authRouter);
 
 
-app.listen(3000,() => {
-    console.log('listening on port ' + process.env.DB_PORT);
+app.listen(3000, () => {
+    console.log('listening on port ' + 3000);
 })
+ 

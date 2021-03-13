@@ -22,7 +22,7 @@ document.querySelector('.load-more').addEventListener('click', (e) => {
 
             })
             //make button disapear when there's no more posts to be loaded
-            if (data.length < 12) {
+            if (data.length <= 12) {
                 document.querySelector('.load-more').classList.add('disapear');
 
             }

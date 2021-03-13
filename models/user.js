@@ -25,6 +25,11 @@ class User {
         })
     }
 
+    static findById(id) {
+        return db.execute('SELECT * FROM users WHERE id = ?',
+        [id]);
+    }
+
     static findByEmail(email) {
         return db.execute('SELECT * FROM users WHERE email = ?',
         [email]);
@@ -33,6 +38,10 @@ class User {
     static findByAuth(email, password) {
         return db.execute('SELECT * FROM users WHERE email = ? AND password = ?',
         [email, password]);
+    }
+
+    static FormatTime(timestamp) {
+        return db.execute('SELECT DATE_FORMAT(?, "%d/%c/%Y")')
     }
 }
 

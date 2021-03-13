@@ -25,7 +25,7 @@ exports.getAdminAddPost = (req, res, next) => {
 
 exports.postAdminAddPost = (req, res, next) => {
     const id = req.body.id;
-
+    const userId = req.session.user.id;
     const title = req.body.title;
     const subtitle = req.body.subtitle;
     const firstParagraph = req.body.firstParagraph;
@@ -35,27 +35,61 @@ exports.postAdminAddPost = (req, res, next) => {
 
     const edit = req.query.edit;
 
-    const newPost = new Post(title, subtitle, firstParagraph, imageUrl, post, tags);
+    const newPost = new Post(userId, title, subtitle, firstParagraph, imageUrl, post, tags);
     //NEW POST
     if (edit !== 'true') {
-        newPost.save();
-    } else {
+        return newPost.save()
+        .then(result => {
+            return res.redirect('/admin/panel');
+        })
+        .catch(err => {
+            if(err.code.toString() === 'ER_DATA_TOO_LONG') {
+                req.flash('errorMessage', 'Sua publicação excede o limite de caracteres.')
+                return res.redirect('/admin/panel')
+            }
+            console.log(err);
+            return res.redirect('/admin/panel')
+            
+            
+        })
+    } 
     //EDIT POST
-        newPost.editById(id);
-    }
+    return newPost.editById(id)
+    .then(result => {
+        return res.redirect('/admin/panel');
+    })
+    .catch(err => {
+        if(err.code.toString() === 'ER_DATA_TOO_LONG') {
+            req.flash('errorMessage', 'Sua publicação excede o limite de caracteres.')
+            return res.redirect('/admin/panel')
+        }
+        console.log(err);
+        return res.redirect('/admin/panel')
+    })
     
-
     
-    
-    
-
-
-    res.redirect('/admin/panel');
 }
 
 exports.getAdminPanel = (req, res, next) => {
-    
-    Post.fetch(0, 12)
+    if (req.session.user.id === 1) {
+        return Post.fetch(0, 12)
+        .then(posts => {
+            return posts;
+            
+        })
+        .then(posts => {
+            res.render('admin-panel', {
+                posts: posts, 
+                pageTitle: 'Painel de Admin',
+                errorMessage: req.flash('errorMessage')
+            });
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    return Post.fetchById(0, 12, req.session.user.id)
     .then(posts => {
         return posts;
         
@@ -68,6 +102,7 @@ exports.getAdminPanel = (req, res, next) => {
     .catch(err => {
         console.log(err)
     })
+    
 
    
 }

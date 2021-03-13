@@ -70,7 +70,7 @@ hr {
 }
 
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 767px) {
     .post {
         grid-column: 1/3;
     }

@@ -5,7 +5,8 @@
     justify-content: space-between;
     border-radius: 3px;
     border: 1px solid;
-    border-color: rgba(0, 0, 0, 0.432);
+    border-color: rgba(163, 163, 163, 0.432);
+    margin-bottom: 5px;
 }
 .box img {
     height: 100px;
@@ -14,6 +15,7 @@
 .box div {
     align-items: center;
     display: flex;
+    
 }
 
 .post-img {
@@ -28,6 +30,8 @@
     color: rgb(138, 0, 0);
     background-color: transparent;
     margin-right: 25px;
+    width: fit-content;
+    padding: 0;
 }
 .delete-btn:hover {
     background-color: transparent;
