@@ -1,0 +1,46 @@
+
+
+<div class="header-wrapper">
+    <header>
+        <a href="/"><img src="https://i.imgur.com/iHSvX7K.png"  class="mobile-logo" alt="logo"></a>
+        <div class="nav__items">
+            <div class="desktop-logo-box">
+                <a href="/"><img src="https://i.imgur.com/iHSvX7K.png"  class="desktop-logo" alt="logo"></a>
+            </div>
+            
+            
+            <ul class="nav__links">
+                <div class="nav__searchbox nav__searchbox-mobile"> 
+                    <form autocomplete="off" action="/search" method="GET">
+                        <input type="text" placeholder="O que você busca?">
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>   
+                </div>
+                <% if (isAuthenticated) { %> 
+                    <li><a href="/admin/add-post/new?edit=false" >Postar</a></li>
+                    <li><a href="/admin/panel" >Painel</a></li>
+                <% }  %> 
+         
+            </ul>    
+            
+        </div>
+
+            <div class="nav__searchbox"> 
+                    <form autocomplete="off" action="/search" method="POST">
+                        <input type="text" name="subject" placeholder="O que você busca?">
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>   
+            </div>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+                <i class="fas fa-times fa-1x"></i>
+            </div>
+    </header>
+</div>
+<div class="main-wrapper">

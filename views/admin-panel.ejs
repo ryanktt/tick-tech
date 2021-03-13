@@ -1,0 +1,50 @@
+<%- include('./templates/head.ejs') %>
+<link rel="stylesheet" href="/css/admin/admin-panel.css">
+
+</head>
+
+<body>
+<%- include('./templates/nav-bar.ejs') %>
+
+    <main>
+
+    <% for(let i = 0; i < posts.length; i ++) { %> 
+
+        <div class="box">
+            <div>
+                <a href="/post/<%= posts[i].id %>"  class="post-img"><img src="<%= posts[i].img %>" alt="image"></a>
+                <a href="/post/<%= posts[i].id %>"><h3><%= posts[i].title %></h3></a>
+            </div>
+            <div>
+                <a href="/admin/add-post/<%= posts[i].id %>?edit=true" class="edit-btn options"><i class="far fa-edit fa-2x"></i></a>
+                <form action="/admin/panel" method="POST">
+                    <input type="hidden" name="id" value="<%= posts[i].id %>">
+                    <button type="submit" class="delete-btn"><i class="far fa-trash-alt fa-2x"></i></button>
+                </form>
+       
+            </div>
+            
+        </div>
+
+    <% } %> 
+        <div class="invisible"></div>
+        
+        <% if (posts.length >= 12) { %> 
+
+            <div class="load-more btn">
+                <button type="button">Carregar Mais</button>
+            </div>
+            
+            <% } %> 
+
+    </main>
+    
+
+        <script src="\js\panel.js"></script>
+<%- include('./templates/footer.ejs') %>
+
+</body>
+
+
+
+</html>

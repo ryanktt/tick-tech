@@ -1,0 +1,28 @@
+<%- include('../templates/head.ejs') %>
+<link rel="stylesheet" href="/css/auth/forms.css">
+</head>
+
+<body>
+<%- include('../templates/nav-bar.ejs') %>
+
+    <main>
+        <form class="auth-form" autocomplete="off" action="/auth/login" method="POST">
+        
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="password">Senha</label>
+                <input type="password" name="password"  id="password">
+            </div>
+            
+            <button type="submit">Entrar</button>
+        </form>
+    
+    </main>
+
+    <%- include('../templates/footer.ejs') %>
+</body>
+</html>
