@@ -65,12 +65,8 @@ img:hover{
 
 .load-more {
     width: max-content;
-    margin: 30px auto 0 auto;
+    margin: 60px auto 0 auto;
 }
-
- .burger {
-     display: none;
- }
 
  
 @media screen and (max-width: 1070px) {
@@ -98,7 +94,5 @@ img:hover{
         grid-column: inherit;
     }
 
-    .burger {
-        display: block;
-    } 
+    
 }

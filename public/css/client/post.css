@@ -11,6 +11,30 @@ h1 {
     font-size: 40px;
 }
 
+.user-post {
+    margin-top: 10px;
+    display: flex;
+}
+
+.user-post img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 100px;
+}
+
+.user-post .user-name {
+    color: rgb(94, 94, 94);
+    font-size: 14px;
+}
+
+.user-post p {
+    font-size: 13px;
+    color: rgb(110, 110, 110);
+}
+
+
 .post p {
     margin: 20px 0;
     

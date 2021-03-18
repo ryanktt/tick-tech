@@ -6,7 +6,8 @@ const bcrypt = require('bcrypt');
 exports.getLogin = (req, res, next) => {
     res.render('../views/auth/login.ejs', {
         path: 'login',
-        pageTitle: 'Login'
+        pageTitle: 'Login',
+        errorMessage: req.flash('errorMessage')
     })
 
 }
