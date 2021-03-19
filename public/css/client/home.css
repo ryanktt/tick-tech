@@ -49,6 +49,7 @@ img:hover{
 
 
 .latest-post {
+    height: max-content;
     display: grid;
     grid-column: 1/3;
 }
