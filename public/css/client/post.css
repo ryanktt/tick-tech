@@ -37,7 +37,7 @@ h1 {
 
 .post p {
     margin: 20px 0;
-    
+    white-space: pre-line;
     line-height: 30px;
     font-size: 19px;
 }

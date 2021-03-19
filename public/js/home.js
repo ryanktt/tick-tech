@@ -14,7 +14,7 @@ document.querySelector('.load-more').addEventListener('click', (e) => {
             data.reverse().forEach((cur, i) => {
                 document.querySelector('.invisible').insertAdjacentHTML("afterend",
                 `<div class="box">
-                <a href="/post/${cur.id}"><img src="${cur.img}" alt="image"></a> 
+                <a href="/post/${cur.id}"><img src="${cur.imageUrl}" alt="image"></a> 
                 <a href="/post/${cur.id}"><h2>${cur.title}</h2></a> 
                 <p>${cur.firstParagraph}</p> 
                 </div>`

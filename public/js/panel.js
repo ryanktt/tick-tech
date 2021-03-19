@@ -15,7 +15,7 @@ document.querySelector('.load-more').addEventListener('click', (e) => {
                 document.querySelector('.invisible').insertAdjacentHTML("afterend",
                 `<div class="box">
                     <div>
-                        <a href="/post/${cur.id}"  class="post-img"><img src="${cur.img}" alt="image"></a>
+                        <a href="/post/${cur.id}"  class="post-img"><img src="${cur.imageUrl}" alt="image"></a>
                         <a href="/post/${cur.id}"><h3>${cur.title}</h3></a>
                     </div>
                     <div>
