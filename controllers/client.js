@@ -27,7 +27,7 @@ exports.getShowPost = (req, res, next) => {
                 });
         })
     })
-    .catch(err => {
+    .catch(err => { 
       next();
     })
     
@@ -59,7 +59,7 @@ exports.getShowPosts = (req, res, next) => {
     
 }
 
-exports.getShowPostsSearch = (req, res, next)=> {
+exports.postShowPostsSearch = (req, res, next)=> {
     function truncateString(str, num) {
         if (num > str.length){
           return str;

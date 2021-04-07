@@ -16,7 +16,7 @@ const options = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE
     //expiration: 60000//(60000 * 60 * 24 * 7)
-}
+} 
  
 const sessionStore = new MySQLStore(options);
 
