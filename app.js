@@ -52,5 +52,5 @@ app.use(clientRouter);
 app.use('/auth', authRouter);
 
 app.listen(process.env.PORT || 5000, async () => {
-	console.log('listening on port ' + 3000);
+	console.log('listening on port ' + (process.env.PORT || 5000));
 });

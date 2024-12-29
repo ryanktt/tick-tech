@@ -8,7 +8,7 @@ module.exports = async function () {
           title VARCHAR(255),
           subtitle VARCHAR(255),
           firstParagraph TEXT,
-          imageUrl VARCHAR(255),
+          imageUrl TEXT,
           post TEXT,
           tags VARCHAR(255),
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

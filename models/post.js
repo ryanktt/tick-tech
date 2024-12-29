@@ -34,7 +34,7 @@ class Post {
 	}
 
 	static fetch(start, amount) {
-		const sql = `SELECT * FROM posts ORDER BY id DESC LIMIT ${parseInt(
+		const sql = `SELECT * FROM posts ORDER BY created_at DESC LIMIT ${parseInt(
 			start,
 		)}, ${parseInt(amount)}`;
 		return db.execute(sql).then(([rows, fields]) => {
